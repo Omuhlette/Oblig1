@@ -3,22 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="script.js"></script>
 </head>
 <body>
     <h1>Ticket sale</h1>
 
-    <p>Choose movie:</p>
+    <!-- -->
+    <h2>Movie:</h2>
+    <label for="movie"></label>
+    <select id="movie" onchange="velgFilm();">
+        <option></option>
+        <option>Dune: Part Two</option>
+        <option>Spider-Man: Beyond the Spider-Verse</option>
+        <option>Deadpool 3</option>
+    </select>
+
+
 
     <p>Amount of tickets</p>
 
+
+
     <p>First name</p>
+
+
 
     <p>Last name</p>
 
+
+
     <p>Phone number</p>
+
+
 
     <p>Email</p>
 
-    <h1>All tickets</h1>
+
+
+    <h1>Summary</h1>
+
+    <button onclick="showSummary()">See summaryr</button>
+    <div id="output"></div>
 </body>
 </html>
