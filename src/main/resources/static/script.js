@@ -56,12 +56,18 @@ function chooseAmount(){
 function showSummary() {
     // Check if a movie is selected before showing the summary
     if (selectedMovie === "") {
-        alert('No movie chosen!')
+        alert('No movie chosen!');
+    } else if (selectedAmount < 1) {
+        alert('No tickets chosen');
+    } else {
+
+        newTicket();
+
+        // Display selected movie in the summary
+        let output = document.getElementById("output");
+        output.innerHTML += `<p>Selected Movie: ${selectedMovie}</p>`;
     }
-
-    else if(selectedAmount < 1){
-        alert('No tickets chosen')
-    }
-
-
 }
+            
+
+
