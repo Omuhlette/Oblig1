@@ -42,9 +42,15 @@ function newTicket() {
 }
 
 function chooseMovie() {
-    let selectElement = document.getElementById("movie");
-    selectedMovie = selectElement.options[selectElement.selectedIndex].text;
+    let selectMovie = document.getElementById("movie");
+    selectedMovie = selectMovie.options[selectMovie.selectedIndex].text;
     console.log("Selected Movie: " + selectedMovie);
+}
+
+function chooseAmount(){
+    let selectAmount = document.getElementById("amount")
+    selectedAmount = selectAmount.value;
+    console.log("Amount: " + selectedAmount);
 }
 
 function showSummary() {
@@ -52,10 +58,10 @@ function showSummary() {
     if (selectedMovie === "") {
         alert('No movie chosen!')
     }
-    /*
-    else if(selectedAmount === 0){
+
+    else if(selectedAmount < 1){
         alert('No tickets chosen')
     }
-    */
+
 
 }

@@ -9,7 +9,7 @@
     <h1>Ticket sale</h1>
 
     <!-- -->
-    <h2>Movie:</h2>
+    <p> Select movie:
     <label for="movie"></label>
     <select id="movie" onchange="chooseMovie();">
         <option></option>
@@ -17,12 +17,12 @@
         <option>Spider-Man: Beyond the Spider-Verse</option>
         <option>Deadpool 3</option>
     </select>
+    </p>
 
-
-
-    <p>Amount of tickets</p>
-
-
+    <p>
+    <label for="amount">Number of tickets:</label>
+    <input type="number" id="amount" name="amount" min="0" max="99" oninput="chooseAmount()"/>
+    </p>
 
     <p>First name</p>
 
