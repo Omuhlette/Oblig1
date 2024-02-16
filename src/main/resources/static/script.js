@@ -1,6 +1,6 @@
 // script.js
 
-ticketArray = [];
+let ticketArray = [];
 
 //Getting variables ready for further use
 let selectedMovie = '';
@@ -92,10 +92,13 @@ function showSummary() {
 
     else {
         newTicket();
-
-        console.log(phone);
-
     }
+}
+function deleteTickets(){
+    ticketArray = [];
+    document.getElementById("delete").innerText = 'Tickets deleted';
+    document.getElementById("output").innerText = '';
+    console.log(ticketArray);
 }
             
 
