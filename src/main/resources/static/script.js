@@ -5,10 +5,18 @@ ticketArray = [];
 //Getting variables ready for further use
 let selectedMovie = '';
 let selectedAmount = 0;
-let selectedFirstName = '';
-let selectedLastName = '';
-let selectedPhoneNumber =12345678;
-let selectedEmail = '';
+
+function chooseMovie() {
+    let selectMovie = document.getElementById("movie");
+    selectedMovie = selectMovie.options[selectMovie.selectedIndex].text;
+    console.log("Selected Movie: " + selectedMovie);
+}
+
+function chooseAmount(){
+    let selectAmount = document.getElementById("amount")
+    selectedAmount = selectAmount.value;
+    console.log("Amount: " + selectedAmount);
+}
 
 function newTicket() {
     let movie = document.getElementById("movie").value;
@@ -18,7 +26,39 @@ function newTicket() {
     let phone = document.getElementById("phone").value;
     let email = document.getElementById("email").value;
 
-    let ticket = {
+    let checkName = /^[A-Za-z]+$/;
+
+    if (!checkName.test(firstName)) {
+        alert('Please enter a valid first name!');
+        return;
+    }
+    if(!checkName.test(lastName)) {
+        alert('Please enter valid last name!');
+        return;
+    }
+
+    let checkPhone = /^\d{8}$/;
+
+    if (!checkPhone.test(phone)) {
+        alert('Please enter valid phone number!');
+        return;
+    }
+
+    let checkEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!checkEmail.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+    else{
+        console.log(firstName);
+        console.log(lastName);
+        console.log(phone);
+        console.log(email);
+    }
+
+
+        let ticket = {
         movie: movie,
         amount: amount,
         firstName: firstName,
@@ -41,31 +81,20 @@ function newTicket() {
     `;
 }
 
-function chooseMovie() {
-    let selectMovie = document.getElementById("movie");
-    selectedMovie = selectMovie.options[selectMovie.selectedIndex].text;
-    console.log("Selected Movie: " + selectedMovie);
-}
-
-function chooseAmount(){
-    let selectAmount = document.getElementById("amount")
-    selectedAmount = selectAmount.value;
-    console.log("Amount: " + selectedAmount);
-}
-
 function showSummary() {
     // Check if a movie is selected before showing the summary
     if (selectedMovie === "") {
         alert('No movie chosen!');
-    } else if (selectedAmount < 1) {
+    }
+    else if (selectedAmount < 1) {
         alert('No tickets chosen');
-    } else {
+    }
 
+    else {
         newTicket();
 
-        // Display selected movie in the summary
-        let output = document.getElementById("output");
-        output.innerHTML += `<p>Selected Movie: ${selectedMovie}</p>`;
+        console.log(phone);
+
     }
 }
             
